@@ -1,0 +1,40 @@
+diff --git a/Desktop.desktop b/Desktop.desktop
+new file mode 100644
+index 0000000..aef09a7
+--- /dev/null
++++ b/Desktop.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=Desktop
++Exec=Desktop
++Terminal=false
+diff --git a/Desktop.pro b/Desktop.pro
+index 4c69b68..7e0af78 100644
+--- a/Desktop.pro
++++ b/Desktop.pro
+@@ -1,5 +1,8 @@
+ QT       += core gui network
+ 
++TARGET = Desktop
++TEMPLATE = app
++
+ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+ 
+ 
+@@ -43,3 +46,13 @@ RESOURCES += \
+ 
+ 
+ RC_FILE+=desktop_ico.rc
++
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = Desktop.desktop
++INSTALLS += unix_desktop
++}
+\ No newline at end of file

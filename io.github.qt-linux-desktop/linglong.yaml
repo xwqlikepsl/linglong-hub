@@ -1,0 +1,20 @@
+package:
+  id: io.github.qt-linux-desktop
+  name: qt-linux-desktop
+  version: 0.0.1
+  kind: app
+  description: |
+    An introduction to the desktop operating system that implements Linux
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: "https://gitee.com/nikolan/qt-linux-desktop.git"
+  commit: fe9634e2f780afdc8536fdacac7ed89271705b29
+  patch: install.patch
+  
+build:
+  kind: qmake
