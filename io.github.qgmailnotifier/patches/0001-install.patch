@@ -1,0 +1,45 @@
+From ffc9560d657d86f6ae48844c09605f8583697792 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Wed, 8 Nov 2023 10:51:29 +0800
+Subject: [install.patch_] install
+
+---
+ qgmailnotifier.desktop |  6 ++++++
+ qgmailnotifier.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 qgmailnotifier.desktop
+
+diff --git a/qgmailnotifier.desktop b/qgmailnotifier.desktop
+new file mode 100644
+index 0000000..308a2f4
+--- /dev/null
++++ b/qgmailnotifier.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=qgmailnotifier
++Exec=qgmailnotifier
++Terminal=false
+\ No newline at end of file
+diff --git a/qgmailnotifier.pro b/qgmailnotifier.pro
+index 91f1ac4..9e68f1d 100644
+--- a/qgmailnotifier.pro
++++ b/qgmailnotifier.pro
+@@ -21,3 +21,13 @@ FORMS        += dialog_options.ui
+ SOURCES      += GMailFeed.cpp main.cpp QGmailNotifier.cpp
+ RESOURCES    += QGmailNotifier.qrc
+ TRANSLATIONS += qgmailnotifier_en.ts qgmailnotifier_fr.ts
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = qgmailnotifier.desktop
++INSTALLS += unix_desktop
++}
++
+-- 
+2.33.1
+
