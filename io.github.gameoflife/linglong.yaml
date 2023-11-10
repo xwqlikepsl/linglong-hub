@@ -1,0 +1,20 @@
+package:
+  id: io.github.gameoflife
+  name: gameoflife
+  version: 0.0.1
+  kind: app
+  description: |
+    Simple implementation of Conways's »Game of Life«, written in C++ and using QT5.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/sgelb/gameoflife.git
+  commit: 37c70110a073e429d91be4c7dfcd7c8a09b79399
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

@@ -1,0 +1,45 @@
+From 087efbf83bf29d64868923d2740c4032b7bafd1b Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Fri, 10 Nov 2023 19:24:21 +0800
+Subject: [install.patch_] install
+
+---
+ game_of_life.desktop |  6 ++++++
+ game_of_life.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 game_of_life.desktop
+
+diff --git a/game_of_life.desktop b/game_of_life.desktop
+new file mode 100644
+index 0000000..f885e0f
+--- /dev/null
++++ b/game_of_life.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=game_of_life
++Exec=game_of_life
++Terminal=false
+\ No newline at end of file
+diff --git a/game_of_life.pro b/game_of_life.pro
+index 0c81a37..31a568a 100644
+--- a/game_of_life.pro
++++ b/game_of_life.pro
+@@ -11,3 +11,13 @@ CONFIG += debug
+ # Input
+ HEADERS += golBoard.h golWindow.h
+ SOURCES += golBoard.cpp golWindow.cpp main.cpp
++
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = game_of_life.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+
