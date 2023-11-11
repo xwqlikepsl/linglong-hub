@@ -1,0 +1,46 @@
+From a039cedd2147bb1de1cf823b1f03a5dce755661b Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Sat, 11 Nov 2023 16:17:50 +0800
+Subject: [install.patch_] install
+
+---
+ LIbreBridge.desktop |  6 ++++++
+ LibreBridge.pro     | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 LIbreBridge.desktop
+
+diff --git a/LIbreBridge.desktop b/LIbreBridge.desktop
+new file mode 100644
+index 0000000..fbb93e4
+--- /dev/null
++++ b/LIbreBridge.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=LibreBridge
++Exec=LibreBridge
++Terminal=false
+\ No newline at end of file
+diff --git a/LibreBridge.pro b/LibreBridge.pro
+index f01b34b..866b55b 100644
+--- a/LibreBridge.pro
++++ b/LibreBridge.pro
+@@ -70,3 +70,13 @@ SOURCES +=	src/AIPlayer.cpp \
+ 			src/gui/SeedValidator.cpp \
+ 			src/gui/PauseClickGrabber.cpp \
+ 			src/gui/Common.cpp
++
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = LibreBridge.desktop
++INSTALLS += unix_desktop
++}
+\ No newline at end of file
+-- 
+2.33.1
+

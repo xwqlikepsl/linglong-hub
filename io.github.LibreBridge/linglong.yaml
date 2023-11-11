@@ -1,0 +1,20 @@
+package:
+  id: io.github.LibreBridge
+  name: LibreBridge
+  version: 0.0.1
+  kind: app
+  description: |
+    LibreBridge an open source and cross-platform contract bridge game, with the goal of being a portable alternative to the excellent Bridge Baron.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/juef17/LibreBridge.git
+  commit: 85d220b8bfce39b13adac0d5fbd6b978d40856d4
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
