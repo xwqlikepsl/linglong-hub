@@ -1,0 +1,20 @@
+package:
+  id: io.github.SamuBrain
+  name: SamuBrain
+  version: 0.0.2
+  kind: app
+  description: |
+    SamuBrain, exp. 4, cognitive mental organs: MPU (Mental Processing Unit), acquiring higher-order knowledge
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/nbatfai/SamuBrain.git
+  commit: aaeba5c816df05085561a5bcc40d35423809ed45
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

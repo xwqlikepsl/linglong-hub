@@ -1,0 +1,45 @@
+From 31047646beeddb8251bc3ac83227e6b6edeb9bbe Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Sat, 11 Nov 2023 20:16:24 +0800
+Subject: [install.patch_] install
+
+---
+ SamuBrain.desktop |  6 ++++++
+ SamuLife.pro      | 10 ++++++++++
+ 2 files changed, 16 insertions(+)
+ create mode 100644 SamuBrain.desktop
+
+diff --git a/SamuBrain.desktop b/SamuBrain.desktop
+new file mode 100644
+index 0000000..01a34e5
+--- /dev/null
++++ b/SamuBrain.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=SamuBrain
++Exec=SamuBrain
++Terminal=false
+\ No newline at end of file
+diff --git a/SamuLife.pro b/SamuLife.pro
+index e9d5cbb..abddc3d 100644
+--- a/SamuLife.pro
++++ b/SamuLife.pro
+@@ -18,3 +18,13 @@ INCLUDEPATH += .
+ # Input
+ HEADERS += SamuBrain.h GameOfLife.h SamuLife.h SamuQl.h
+ SOURCES +=  main.cpp SamuLife.cpp GameOfLife.cpp SamuBrain.cpp
++
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = SamuBrain.desktop
++INSTALLS += unix_desktop
++}
+-- 
+2.33.1
+
