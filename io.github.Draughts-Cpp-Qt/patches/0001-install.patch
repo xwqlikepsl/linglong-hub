@@ -1,0 +1,45 @@
+From d3ad27bd072c0b04d511d56304e1ee9b7262f25a Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Sat, 11 Nov 2023 20:24:13 +0800
+Subject: [install.patch_] install
+
+---
+ chessTest.desktop | 6 ++++++
+ draughts.pro      | 6 +++++-
+ 2 files changed, 11 insertions(+), 1 deletion(-)
+ create mode 100644 chessTest.desktop
+
+diff --git a/chessTest.desktop b/chessTest.desktop
+new file mode 100644
+index 0000000..605d8cb
+--- /dev/null
++++ b/chessTest.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=chessTest
++Exec=chessTest
++Terminal=false
+\ No newline at end of file
+diff --git a/draughts.pro b/draughts.pro
+index 23486a4..d9e6108 100644
+--- a/draughts.pro
++++ b/draughts.pro
+@@ -42,8 +42,12 @@ HEADERS += \
+ 
+ # Default rules for deployment.
+ qnx: target.path = /tmp/$${TARGET}/bin
+-else: unix:!android: target.path = /opt/$${TARGET}/bin
++else: unix:!android: target.path = $${PREFIX}/bin
+ !isEmpty(target.path): INSTALLS += target
+ 
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = chessTest.desktop
++INSTALLS += unix_desktop
++
+ RESOURCES += \
+     images.qrc
+-- 
+2.33.1
+
