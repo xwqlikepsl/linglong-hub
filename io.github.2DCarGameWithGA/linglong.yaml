@@ -1,0 +1,20 @@
+package:
+  id: io.github.2DCarGameWithGA
+  name: 2DCarGameWithGA
+  version: 0.0.1
+  kind: app
+  description: |
+    2D car game in C++, where you can play against a genetic algorithm
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/swordey/2DCarGameWithGA.git
+  commit: 7031d79302a1ed7be7b3c20f45702d84bb720c82
+  patch: patches/0001-install.patch
+
+build:
+  kind: cmake

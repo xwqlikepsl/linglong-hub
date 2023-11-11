@@ -1,0 +1,43 @@
+From 482d4342b292c83a8d167052626d5747391b3f7d Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Sat, 11 Nov 2023 20:35:20 +0800
+Subject: [install.patch_] install
+
+---
+ 2DCarGameWithGA_autogen.desktop | 6 ++++++
+ CMakeLists.txt                  | 6 +++++-
+ 2 files changed, 11 insertions(+), 1 deletion(-)
+ create mode 100644 2DCarGameWithGA_autogen.desktop
+
+diff --git a/2DCarGameWithGA_autogen.desktop b/2DCarGameWithGA_autogen.desktop
+new file mode 100644
+index 0000000..ddc7cf5
+--- /dev/null
++++ b/2DCarGameWithGA_autogen.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=2DCarGameWithGA_autogen
++Exec=2DCarGameWithGA
++Terminal=false
+\ No newline at end of file
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 746548e..04666ed 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -26,4 +26,8 @@ target_link_libraries(2DCarGameWithGA
+                         PUBLIC 
+                         Qt5::Core
+                         Qt5::Gui
+-                        Qt5::Widgets)
+\ No newline at end of file
++                        Qt5::Widgets)
++
++
++install(PROGRAMS build_dir/2DCarGameWithGA DESTINATION bin)
++install(PROGRAMS 2DCarGameWithGA_autogen.desktop DESTINATION share/applications)
+\ No newline at end of file
+-- 
+2.33.1
+
