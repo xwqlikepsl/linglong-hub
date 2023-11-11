@@ -1,0 +1,20 @@
+package:
+  id: io.github.spaceship-battle
+  name: spaceship-battle
+  version: 0.0.1
+  kind: app
+  description: |
+    The game was developed for the final (solo) project of Object-Oriented Programing subject at IPIA Tuzla.
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/tricic/spaceship-battle.git
+  commit: 06a79f55bf8698934505c14951775213d30105c9
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake
