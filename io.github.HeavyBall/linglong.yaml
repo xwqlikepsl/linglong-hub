@@ -1,0 +1,20 @@
+package:
+  id: io.github.HeavyBall
+  name: HeavyBall
+  version: 0.0.1
+  kind: app
+  description: |
+    A simple Qt production of the game
+
+runtime:
+  id: org.deepin.Runtime
+  version: 23.0.0
+
+source:
+  kind: git
+  url: https://github.com/PJK136/HeavyBall.git
+  commit: c8da2d8591e00b7d6f655b4bd55a26dcb5cb3431
+  patch: patches/0001-install.patch
+
+build:
+  kind: qmake

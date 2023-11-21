@@ -1,0 +1,46 @@
+From e7bea557458812d57fd3079f16ab5481b5547de8 Mon Sep 17 00:00:00 2001
+From: xwqlikepsl <2242484264@qq.com>
+Date: Tue, 21 Nov 2023 19:28:21 +0800
+Subject: [install.patch_] install
+
+---
+ HeavyBall.desktop |  6 ++++++
+ HeavyBall.pro     | 11 +++++++++++
+ 2 files changed, 17 insertions(+)
+ create mode 100644 HeavyBall.desktop
+
+diff --git a/HeavyBall.desktop b/HeavyBall.desktop
+new file mode 100644
+index 0000000..06de86b
+--- /dev/null
++++ b/HeavyBall.desktop
+@@ -0,0 +1,6 @@
++[Desktop Entry]
++Version=1.0
++Type=Application
++Name=HeavyBall
++Exec=HeavyBall
++Terminal=false
+\ No newline at end of file
+diff --git a/HeavyBall.pro b/HeavyBall.pro
+index 807027b..b898eda 100644
+--- a/HeavyBall.pro
++++ b/HeavyBall.pro
+@@ -34,3 +34,14 @@ RC_FILE += ressources.rc
+ 
+ RESOURCES += \
+     Resources.qrc
++
++unix: {
++target.path = $${PREFIX}/bin
++INSTALLS += target
++
++unix_desktop.path = $${PREFIX}/share/applications
++unix_desktop.files = HeavyBall.desktop
++INSTALLS += unix_desktop
++
++}
++
+-- 
+2.33.1
+
